@@ -12,8 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="icon/nk.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <style>
         body {
@@ -97,8 +99,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#kimdir">Kurucuları</a></li>
+                    <!--li><a href="#kimdir">Kurucuları</a></li-->
                     <li><a href="#hizmet">Hizmetlerimiz</a></li>
+                    <li><a href="#randevu">Randevu Al</a></li>
                     <li><a href="#banka">Banka Hesap Numaralarımız</a></li>
                     <li><a href="#iletisim">İletişim</a></li>
                 </ul>
@@ -112,7 +115,19 @@
         <img src="img/nazlı.png" class="img-responsive img-circle margin" style="display:inline" alt="nazlı" width="350" height="350">
         <img src="img/necla.png" class="img-responsive img-circle margin" style="display:inline" alt="necla" width="350" height="350">
         <img src="img/tugce.png" class="img-responsive img-circle margin" style="display:inline" alt="necla" width="350" height="350">
-        <h3>GÜZELLİK SALONU</h3>
+        <h3>RANDEVU ALIN</h3>
+        <form>
+            <input class="form-control" type="datetime-local" placeholder="Tarih Saati Seçin">
+        </form>
+        <script>
+            confing={
+                enableTime: true,
+                dateFormat: "Y-m-d H:i",
+                altInput: true,
+                altFormat: "F j, Y(h:S K)",
+            }
+            flatpickr(" input[type=datetime--local]", confing);
+        </script>
     </div>
 
     <!-- econd Container -->
@@ -130,12 +145,12 @@
             <div class="col-sm-4">
                 <p></p>
                 <p><font face="tahoma" size="3" color="black">
-                   <b>NAZLICAN KAYMAK</b> <b>Şube Kodu: 161</b>   <b>  İBAN:TR500001200916100001031840</b></font>
+                   <b>NAZLICAN KAYMAK</b> <b>  İBAN:TR660013400001530053100001</b></font>
                 </p>
                 <div align="center">
-                    <a href="https://sube.halkbank.com.tr/InternetBankingHost/HostLogin">
+                    <a href="https://acikdenizv2.denizbank.com/">
 
-                        <img border="0" src="img/banka-img/hankbank.jpeg" class="img-responsive margin" style="width: 50%" alt="Hankbank Bankası"></a>
+                        <img border="0" src="img/banka-img/denizbank.png" class="img-responsive margin" style="width: 50%" alt="DenizBank"></a>
                 </div>
             </div>
         </div>
@@ -143,7 +158,7 @@
 
     <!-- Contact -->
     <div id="iletisim" class="container-fluid bg-5 text-center">
-        <h3 class="margin">İletişim</h3>
+        <!--h3 class="margin">İletişim</h3-->
         <br>
         <div class="row ">
             <div class="col-sm-5 text-left">
@@ -151,8 +166,9 @@
                 <p><span class="glyphicon glyphicon-map-marker"></span> Kozan/Adana, TR</p>
                 <p><span class="glyphicon glyphicon-phone"></span> NK MAN +90 543 720 9515</p>
                 <p><span class="glyphicon glyphicon-phone"></span> NK GİRL +90 543 901 9515</p>
+                <!--p><span class="glyphicon glyphicon-envelope"></span> nkgüzellikmerkezii@gmail.com</p-->
             </div>
-            <div class="col-sm-7 ">
+            <!--div class="col-sm-7 ">
                 <div class="row">
                     <div class="col-sm-6 form-group">
                         <input class="form-control" id="name" name="name" placeholder="İsim" type="text" required>
@@ -168,7 +184,7 @@
                         <button class="btn btn-default pull-right" type="submit">Gönder</button>
                     </div>
                 </div>
-            </div>
+            </div!-->
         </div>
     </div>
 
