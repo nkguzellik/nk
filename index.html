@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
+    
 
 <head>
     <title>NK GÜZELLİK MERKEZİ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta charset="UTF-8">
     <meta name="description" content="NK GÜZELLİK MERKEZİ Web Sitesi">
     <meta name="keywords" content="Lazer Epilasyon|Cilt Bakımı|Sir Ağda|Profesyonel Makyaj|İpek Kirpik|Kalıcı oje-kuru manikür">
@@ -15,7 +18,9 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="icon/nk.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link " href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link " href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="main.css" >
 
     <style>
         body {
@@ -115,19 +120,58 @@
         <img src="img/nazlı.png" class="img-responsive img-circle margin" style="display:inline" alt="nazlı" width="350" height="350">
         <img src="img/necla.png" class="img-responsive img-circle margin" style="display:inline" alt="necla" width="350" height="350">
         <img src="img/tugce.png" class="img-responsive img-circle margin" style="display:inline" alt="necla" width="350" height="350">
-        <h3>RANDEVU ALIN</h3>
-        <form>
-            <input class="form-control" type="datetime-local" placeholder="Tarih Saati Seçin">
-        </form>
-        <script>
-            confing={
-                enableTime: true,
-                dateFormat: "Y-m-d H:i",
-                altInput: true,
-                altFormat: "F j, Y(h:S K)",
-            }
-            flatpickr(" input[type=datetime--local]", confing);
-        </script>
+        <h3>GÜZELLİK MERKEZİ    </h3>
+        <!--form action="reservation.php" method="post">
+            <div class="elem-group">
+                <label for="name">Nere İçin Randevu Alacaksınız</label>
+                <input type="text" id="name" name="visitor_name" placeholder="Bayan/Erkek" pattern=[A-Z\sa-z]{3,20} required>
+              </div>
+            <div class="elem-group">
+              <label for="name">Adınız ve Soyadınız</label>
+              <input type="text" id="name" name="visitor_name" placeholder="Furkan Kılıçlı" pattern=[A-Z\sa-z]{3,20} required>
+            </div>
+            <div class="elem-group">
+              <label for="email">E-posta</label>
+              <input type="email" id="email" name="visitor_email" placeholder="kiliclifurkan486@gmail.com" required>
+            </div>
+            <div class="elem-group">
+              <label for="phone">Telefonunuz</label>
+              <input type="tel" id="phone" name="visitor_phone" placeholder="507-510-3205" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+            </div>
+            <hr>
+            <div class="elem-group inlined">
+              <label for="adult">Daha Önce Hiç Lazer Yaptırdınızmı?</label>
+              <input type="text" id="adult" name="total_adults" placeholder="Evet/Hayır" required>
+            </div>
+            <div class="elem-group inlined">
+              <label for="child">Çocuklar</label>
+              <input type="number" id="child" name="total_children" placeholder="2" min="0" required>
+            </div>
+            <div class="elem-group inlined">
+              <label for="checkin-date">Tarih Seçin</label>
+              <input type="date" id="checkin-date" name="checkin" required>
+            </div-->
+            <!--div class="elem-group inlined">
+              <label for="checkout-date">Ayrılış Tarihi</label>
+              <input type="date" id="checkout-date" name="checkout" required>
+            </div>
+            <div class="elem-group">
+              <label for="room-selection">Oda Tercihini Seçin</label>
+              <select id="room-selection" name="room_preference" required>
+                  <option value="">Listeden bir Oda Seçin</option>
+                  <option value="connecting">Bağlanıyor</option>
+                  <option value="adjoining">Bitişik</option>
+                  <option value="adjacent">Bitişik</option>
+              </select>
+            </div>
+            <hr>
+            <div class="elem-group">
+              <label for="message">Ne İçin Randevu Oluşturuyorsunuz</label>
+              <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+            </div>
+            <button type="submit">Gönder</button>
+          </form-->
+          
     </div>
 
     <!-- econd Container -->
@@ -152,6 +196,7 @@
 
                         <img border="0" src="img/banka-img/denizbank.png" class="img-responsive margin" style="width: 50%" alt="DenizBank"></a>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -166,6 +211,8 @@
                 <p><span class="glyphicon glyphicon-map-marker"></span> Kozan/Adana, TR</p>
                 <p><span class="glyphicon glyphicon-phone"></span> NK MAN +90 543 720 9515</p>
                 <p><span class="glyphicon glyphicon-phone"></span> NK GİRL +90 543 901 9515</p>
+                <p><img src="img/insta.png" alt="r1" hspace="1" width="20" height="20 align="left" /> nkguzellikmerkezi   </p>             
+                <p><img src="img/insta.png" alt="r1" hspace="1" width="20" height="20 align="left" /> nkmankozan    </p>            
                 <!--p><span class="glyphicon glyphicon-envelope"></span> nkgüzellikmerkezii@gmail.com</p-->
             </div>
             <!--div class="col-sm-7 ">
@@ -184,15 +231,23 @@
                         <button class="btn btn-default pull-right" type="submit">Gönder</button>
                     </div>
                 </div>
-            </div!-->
+            </div-->
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="container-fluid bg-4 text-center">
-        <p>Tüm Hakları Ortadadır. 2017 - 2022 </br><a href="https://nkkozan.github.io/nkguzellikmerkezi/">https://nkkozan.github.io/nkguzellikmerkezi/        </a></p>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <p>Tüm Hakları Saklıdır. 2017 - 2022 </br><a href="https://nkkozan.github.io/nkguzellikmerkezi/">https://nkkozan.github.io/nkguzellikmerkezi/        </a></p>
+        <body id="backgroundBody">
+            <div id="textBody">
+                <div>
+                    <a href="https://www.instagram.com/nkguzellikmerkezi/" class="fa fa-instagram" target="_blank" rel="noopener noreferrer"></a>
+                    <a href="https://www.instagram.com/nkmankozan/" class="fa fa-instagram" target="_blank" rel="noopener noreferrer"></a>
+
+                </div>
+        
+            </div>
+        </body>
     </footer>
 
 </body>
