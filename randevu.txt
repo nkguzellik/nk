@@ -1,23 +1,35 @@
-  <html>
-        <head>      
-            <meta name="viewport" content="witdh=device-witdh, initial-scale=1.0">
-        <title>Randevu Alın</title>
-        <link rel="stylesheet" href="main.css">
-    </head>
-  
-    <div class="col-sm-12">
-        <form>
+<div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
           <h3>Randevu Alın</h3>
           <input type="text" id="name" placeholder="Adın Soyadın" required>
           <input type="email" id="email" placeholder="Email" required>
           <input type="tel" id="phone" placeholder="Telefon" required>
-          <input type="text" id="randevu" placeholder="Ne Hizmeti Alacaksınız" required>
-          <input type="date" id="tarih" placeholder="Tarih" required>
-          <input type="time" id="saat" placeholder="Saat" required>
+          <input type="text" id="hizmet" placeholder="Ne Hizmeti Alacaksınız" required>
+          <input type="datetime-local" id="tarihsaat" placeholder="Tarih ve Saat" required>
           <textarea id="message" rows="4" placeholder="Detaylı Bir Şekilde Açıklayın"></textarea>
-          <button type="submit">Gönder</button>      
+          <button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder</button> 
         </form>
     </div>
-  
-  </html>       
-    </div>
+    
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                SecureToken: "efb831e6-d9d7-4575-a490-3c93b1c710ee",
+                Host : "smtp.gmail.com",
+                Username : "furko346@gmail.com",
+                Password : "258749631",
+                To : 'nkguzellik.github.io/nk/',
+                From : document.getElementById("email").value,
+                Subject : "Randevunuz Alınmıştır",
+                Body : "Name: " + document.getElementById("name").value
+                + "<br> Email: " + document.getElementById("email").value
+                + "<br> Telefon: " + document.getElementById("phone").value
+                + "<br> Ne Hizmeti Alacaksınız: " + document.getElementById("hizmet").value
+                + "<br> Tarih ve Saat: " + document.getElementById("tarihsaat").value
+                + "<br> Detaylı Bir Şekilde Açıklayın: " + document.getElementById("message").value
+            }).then(
+            message => alert("Randevunuz Başaralı Bir Şekilde Alınmıştır")
+            );
+        }
+    </script>

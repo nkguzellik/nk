@@ -186,18 +186,37 @@
     </head>
   <body>
     <div class="container">
-        <form>
+        <form onsubmit="sendEmail(); reset(); return false;">
           <h3>Randevu Alın</h3>
           <input type="text" id="name" placeholder="Adın Soyadın" required>
           <input type="email" id="email" placeholder="Email" required>
           <input type="tel" id="phone" placeholder="Telefon" required>
-          <input type="text" id="randevu" placeholder="Ne Hizmeti Alacaksınız" required>
-          <input type="date" id="tarih" placeholder="Tarih" required>
-          <input type="time" id="saat" placeholder="Saat" required>
+          <input type="text" id="hizmet" placeholder="Ne Hizmeti Alacaksınız" required>
+          <input type="datetime-local" id="tarihsaat" placeholder="Tarih ve Saat" required>
           <textarea id="message" rows="4" placeholder="Detaylı Bir Şekilde Açıklayın"></textarea>
-          <button type="submit">Gönder</button>      
+          <button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder</button> 
         </form>
     </div>
+    
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                SecureToken: "c6525d89-7003-40d2-aad2-2780d285592f",
+                To : 'kiliclifurkan486@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New Contact Form Enquiry",
+                Body : "Name: " + document.getElementById("name").value
+                + "<br> Email: " + document.getElementById("email").value
+                + "<br> Telefon: " + document.getElementById("phone").value
+                + "<br> Ne Hizmeti Alacaksınız: " + document.getElementById("hizmet").value
+                + "<br> Tarih ve Saat: " + document.getElementById("tarihsaat").value
+                + "<br> Detaylı Bir Şekilde Açıklayın: " + document.getElementById("message").value
+            }).then(
+            message => alert("Randevunuz Başaralı Bir Şekilde Alınmıştır")
+            );
+        }
+    </script>
   </body>
   </html>       
     </div>
