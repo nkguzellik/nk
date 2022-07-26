@@ -1,0 +1,23 @@
+  <html>
+        <head>      
+            <meta name="viewport" content="witdh=device-witdh, initial-scale=1.0">
+        <title>Randevu Alın</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+  
+    <div class="col-sm-12">
+        <form>
+          <h3>Randevu Alın</h3>
+          <input type="text" id="name" placeholder="Adın Soyadın" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="tel" id="phone" placeholder="Telefon" required>
+          <input type="text" id="randevu" placeholder="Ne Hizmeti Alacaksınız" required>
+          <input type="date" id="tarih" placeholder="Tarih" required>
+          <input type="time" id="saat" placeholder="Saat" required>
+          <textarea id="message" rows="4" placeholder="Detaylı Bir Şekilde Açıklayın"></textarea>
+          <button type="submit">Gönder</button>      
+        </form>
+    </div>
+  
+  </html>       
+    </div>
