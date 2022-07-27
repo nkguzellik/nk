@@ -30,3 +30,41 @@
             );
         }
     </script>
+
+
+
+      <head>      
+            <meta name="viewport" content="witdh=device-witdh, initial-scale=1.0">
+        <title>Randevu Alın</title>
+        <!--link rel="stylesheet" href="main.css"-->
+    </head>
+  <body>
+    <div class="container">
+        <form action="https://formspree.io/f/mvolejev" method="POST">
+          <h3>Randevu Alın</h3>
+          <input type="text" id="name" placeholder="Adın Soyadın" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="tel" id="phone" placeholder="Telefon" required>
+          <select name="Ne Hizmeti Alacaksınız" >
+            <option>Lazer Epilasyon</option>
+            <option>Cilt Bakımı</option>
+            <option>Sir Ağda</option>
+            <option>Profesyonel Makyaj</option>
+            <option>İpek Kirpik</option>
+            <option>Kalıcı oje-kuru manikür</option>
+          </select>
+          <input type="datetime-local" id="tarihsaat" placeholder="Tarih ve Saat" required>
+          <textarea id="message" rows="4" placeholder="Detaylı Bir Şekilde Açıklayın"></textarea>
+          <button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder</button> 
+        </form>
+    </div>
+
+
+     <select name="Ne Hizmeti Alacaksınız" style="padding: 15px; border-radius: 30px;" >
+          <option>Lazer Epilasyon</option>
+          <option>Cilt Bakımı</option>
+          <option>Sir Ağda</option>
+          <option>Profesyonel Makyaj</option>
+          <option>İpek Kirpik</option>
+          <option>Kalıcı oje-kuru manikür</option>
+        </select>

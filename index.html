@@ -89,19 +89,19 @@
         }
         
         button {
-    height: 50px;
-    background: orange;
-    border: none;
-    color: white;
-    font-size: 1.25em;
-    font-family: 'Nanum Gothic';
-    border-radius: 4px;
-    cursor: pointer;
-  }
+        height: 50px;
+        background: orange;
+        border: none;
+        color: white;
+        font-size: 1.25em;
+        font-family: 'Nanum Gothic';
+        border-radius: 4px;
+        cursor: pointer;
+         }
   
-  button:hover {
-    border: 2px solid black;
-  }
+        button:hover {
+            border: 2px solid black;
+        }
         .containet{
         width: 100%;
         height: 100vh;
@@ -152,10 +152,6 @@
             background: white;
             border: 1px solid black;
         }
-
-        textarea {
-            height: 6rem;
-        }
     </style>
 </head>
 
@@ -169,7 +165,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">NK GÜZELLİK MERKEZİ</a>
+                <a class="navbar-brand" href="#nk">NK GÜZELLİK MERKEZİ</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -191,14 +187,9 @@
         <img src="img/necla.png" class="img-responsive img-circle margin" style="display:inline" alt="necla" width="350" height="350">
         <img src="img/tugce.png" class="img-responsive img-circle margin" style="display:inline" alt="necla" width="350" height="350"-->
    <html>
-        <head>      
-            <meta name="viewport" content="witdh=device-witdh, initial-scale=1.0">
-        <title>Randevu Alın</title>
-        <!--link rel="stylesheet" href="main.css"-->
-    </head>
   <body>
-    <div class="container">
-        <form action="https://formsubmit.co/59a78b5050a165650290576f9ea3730f" method="POST">
+    <!--div class="container">
+        <form action="https://formspree.io/f/mvolejev" method="POST">
           <h3>Randevu Alın</h3>
           <input type="text" id="name" placeholder="Adın Soyadın" required>
           <input type="email" id="email" placeholder="Email" required>
@@ -215,17 +206,75 @@
           <textarea id="message" rows="4" placeholder="Detaylı Bir Şekilde Açıklayın"></textarea>
           <button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder</button> 
         </form>
-    </div>
-    
-   
+    </div-->
+    <center><form id="my-form" action="https://formspree.io/f/mvolejev" method="POST" >
+        <h1 tyle="color: black; ">Randevu Alın</h1>
+        <!--h3>Randevu Alın</h3-->
+        <small style="color: black; "> Adın Soyadın </small>
+        <input type="text" name="Adın Soyadın"  style="padding: 15px; border-radius: 30px;" align required>
+        <small style="color: black;"> Email </small>
+        <input type="email"  name="Email" style="padding: 15px; border-radius: 30px;" required>
+        <small style="color: black;"> Telefon </small>
+        <input type="tel"  name="Telefon" style="padding: 15px; border-radius: 30px;" required>
+        <small style="color: black;"> Bir Hizmet Seçin </small>
+        <select name="Bir Hizmet Seçin" style="padding: 15px; border-radius: 30px; color: black;" >
+          <option>Lazer Epilasyon</option>
+          <option>Cilt Bakımı</option>
+          <option>Sir Ağda</option>
+          <option>Profesyonel Makyaj</option>
+          <option>İpek Kirpik</option>
+          <option>Kalıcı oje</option>
+          <option>Kuru manikür</option>
+        </select>
+        <small style="color: black;"> Tarih ve Saat </small>
+        <input type="datetime-local" id="tarihsaat" name="Tarih ve Saat" style="padding: 15px; border-radius: 30px;" required>
+        <small style="color: black;"> Detaylı Açıklama Yapı<nav></nav> </small>
+        <textarea id="message" rows="4" name="Detaylı Açıklama Yapın" style="padding: 15px; border-radius: 30px;"></textarea>
+        <button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder</button> 
+    </form>
+        <p id="my-form-status"></p>    
+      <!-- Place this script at the end of the body tag -->
+      <script>
+          var form = document.getElementById("my-form");
+          
+          async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+              method: form.method,
+              body: data,
+              headers: {
+                  'Accept': 'application/json'
+              }
+            }).then(response => {
+              if (response.ok) {
+                status.innerHTML = "Randevunuz Başarılı Bir Şekilde Alındı";
+                form.reset()
+              } else {
+                response.json().then(data => {
+                  if (Object.hasOwn(data, 'errors')) {
+                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                  } else {
+                    status.innerHTML = "Randevunuz Başarılı Bir Şekilde Alınamadı"
+                  }
+                })
+              }
+            }).catch(error => {
+              status.innerHTML = "Randevunuz Başarılı Bir Şekilde Alınamadı"
+            });
+          }
+          form.addEventListener("submit", handleSubmit)
+      </script> 
   </body>
-  </html>       
+  </html>
+  </center>       
     </div>
 
     <!-- econd Container -->
     <div id="hizmet" class="container-fluid bg-2 text-center">
         <h3 class="margin">Hizmetlerimiz</h3>
-        <p>Lazer Epilasyon|Cilt Bakımı|Sir Ağda|Profesyonel Makyaj|İpek Kirpik|Kalıcı oje-kuru manikür </p>
+        <p>Lazer Epilasyon| Cilt Bakımı| Sir Ağda| Profesyonel Makyaj| İpek Kirpik| Kalıcı oje | Kuru manikür </p>
         </a>
     </div>
 
