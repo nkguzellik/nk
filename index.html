@@ -144,6 +144,18 @@
             margin: 20px auto 0;
             border-radius: 30px;
         }
+
+        input,
+        select,
+        textarea {
+            padding: 1.4rem;
+            background: white;
+            border: 1px solid black;
+        }
+
+        textarea {
+            height: 6rem;
+        }
     </style>
 </head>
 
@@ -186,37 +198,26 @@
     </head>
   <body>
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false;">
+        <form action="https://formsubmit.co/59a78b5050a165650290576f9ea3730f" method="POST">
           <h3>Randevu Alın</h3>
           <input type="text" id="name" placeholder="Adın Soyadın" required>
           <input type="email" id="email" placeholder="Email" required>
           <input type="tel" id="phone" placeholder="Telefon" required>
-          <input type="text" id="hizmet" placeholder="Ne Hizmeti Alacaksınız" required>
+          <select name="Ne Hizmeti Alacaksınız" >
+            <option>Lazer Epilasyon</option>
+            <option>Cilt Bakımı</option>
+            <option>Sir Ağda</option>
+            <option>Profesyonel Makyaj</option>
+            <option>İpek Kirpik</option>
+            <option>Kalıcı oje-kuru manikür</option>
+          </select>
           <input type="datetime-local" id="tarihsaat" placeholder="Tarih ve Saat" required>
           <textarea id="message" rows="4" placeholder="Detaylı Bir Şekilde Açıklayın"></textarea>
           <button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder</button> 
         </form>
     </div>
     
-    <script src=" https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail(){
-            Email.send({
-                SecureToken: "74927b16-0aaf-4b61-9abb-dbbcb31eed3c",
-                To : 'kiliclifurkan486@gmail.com',
-                From : document.getElementById("email").value,
-                Subject : "NK Güzellik Merkezi Randevu",
-                Body : "Name: " + document.getElementById("name").value
-                + "<br> Email: " + document.getElementById("email").value
-                + "<br> Telefon: " + document.getElementById("phone").value
-                + "<br> Ne Hizmeti Alacaksınız: " + document.getElementById("hizmet").value
-                + "<br> Tarih ve Saat: " + document.getElementById("tarihsaat").value
-                + "<br> Detaylı Bir Şekilde Açıklayın: " + document.getElementById("message").value
-            }).then(
-            message => alert("Randevunuz Başaralı Bir Şekilde Alınmıştır")
-            );
-        }
-    </script>
+   
   </body>
   </html>       
     </div>
