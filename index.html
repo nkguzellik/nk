@@ -134,7 +134,7 @@
         }
         form button{
             padding: 15px;
-            background: #ff5391;
+            background: #DC143C;
             color: #fff;
             font-size: 18px;
             border: 0;
@@ -152,6 +152,16 @@
             background: white;
             border: 1px solid black;
         }
+    
+  
+
+        td{
+            width: 500px;
+            height: 50px;
+            border: 2px solid transparent;
+            font-style: oblique;
+        }
+
     </style>
 </head>
 
@@ -199,8 +209,10 @@
         <input type="tel"  name="Telefon" style="padding: 15px; border-radius: 30px;" required>
         <small style="color: black;"> Bir Hizmet Seçin </small>
         <select name="Bir Hizmet Seçin" style="padding: 15px; border-radius: 30px; color: black;" >
-          <option>Lazer Epilasyon</option>
-          <option>Cilt Bakımı</option>
+          <option>Bayanlar İçin Lazer Epilasyon</option>
+          <option>Baylar İçin Lazer Epilasyon</option>
+          <option>Bayanlar İçin Cilt Bakımı</option>
+          <option>Baylar İçin Cilt Bakımı</option>
           <option>Sir Ağda</option>
           <option>Profesyonel Makyaj</option>
           <option>İpek Kirpik</option>
@@ -261,9 +273,31 @@
 
     <!-- Third Container (Grid) -->
     <div id="banka" class="container-fluid bg-3 text-center">
-        <h3 class="margin">Banka Hesap ve İBAN Numarası Bilgileri</h3>
+        <h3 class="margin"><font color="black">Banka Hesap ve İBAN Numarası Bilgileri</font></h3>
         <br>
-        <div class="row">
+    <TABLE >
+        <TR>
+        
+            <td ALIGN=LEFT BGCOLOR="#DC143C" ><font color="white"><b>Banka Adı</b></font></td>   
+            <td ALIGN=LEFT BGCOLOR="#DC143C"><font color="white"><b>HESAP TÜRÜ</b></font></td>
+            <td ALIGN=LEFT BGCOLOR="#DC143C"><font color="white"><b>Hesap Sahibi</b></font></td>
+            <td ALIGN=LEFT BGCOLOR="#DC143C"><font color="white"><b>Şube Adı</b></font></td>
+            <td ALIGN=LEFT BGCOLOR="#DC143C"><font color="white"><b>Şube Kodu</b></font></td>
+            <td ALIGN=LEFT BGCOLOR="#DC143C"><font color="white"><b>IBAN</b></font></td>
+        
+        </TR>
+    </TABLE>
+    <table >
+        <tr>
+            <td ALIGN=LEFT><a href="https://acikdenizv2.denizbank.com/" target="_blank"><font color="black">DENİZBANK</font></a></td>
+            <td ALIGN=LEFT><font color="black">₺</font></td>
+            <td ALIGN=left><font color="black">NAZLICAN KAYMAK</font></td>
+            <td ALIGN=left><font color="black">KOZAN</font></td>
+            <td ALIGN=left><font color="black">1390</font></td>
+            <td ALIGN=left><font color="black">TR660013400001530053100001</font></td>
+        </tr>
+    </table>
+        <!--div class="row">
             <div class="col-sm-4">
                 <p></p>
                 <p><font face="tahoma" size="3" color="black">
@@ -276,7 +310,7 @@
                 </div>
                 
             </div>
-        </div>
+        </div-->
     </div>
 
     <!-- Contact -->
@@ -285,21 +319,23 @@
         <br>
         <div class="row ">
             <div class="col-sm-5 text-left">
-                <p>Bu Numaralardan Bize Ulaşabilirsiniz</p>
-                <p><span class="glyphicon glyphicon-map-marker"></span> Kozan/Adana, TR</p>
-                <p><span class="glyphicon glyphicon-phone"></span> NK MAN +90 543 720 9515</p>
-                <p><span class="glyphicon glyphicon-phone"></span> NK GİRL +90 543 901 9515</p>
-                <p><img src="img/insta.png" alt="r1" hspace="1" width="20" height="20 align="left" /> nkguzellikmerkezi   </p>             
-                <p><img src="img/insta.png" alt="r1" hspace="1" width="20" height="20 align="left" /> nkmankozan    </p>            
-                <!--p><span class="glyphicon glyphicon-envelope"></span> nkgüzellikmerkezii@gmail.com</p-->
+                <p><font color="black" , border: 2px solid transparent;>Bize Bu Bilgilerden Ulaşabilirsiniz</font></p>
+                <p><span class="glyphicon glyphicon-map-marker"></span><font color="black" , border: 2px solid transparent;> Kozan/Adana, TR</font></p>
+                <p><span class="glyphicon glyphicon-phone"></span><font color="black" , border: 2px solid transparent;>NK MAN +90 543 720 9515</font></p>
+                <p><span class="glyphicon glyphicon-phone"></span> <font color="black" , border: 2px solid transparent;>NK GİRL +90 543 901 9515</font></p>
+                <!--p><span class="glyphicon glyphicon-envelope"></span><font color="black" , border: 2px solid transparent;> nkguzellikmerkezii@gmail.com</font></p-->
+                <p><img src="img/insta.png" alt="r1" hspace="1" width="20" height="20 align="left" /> <font color="black" , border: 2px solid transparent;>nkguzellikmerkezi</font></p>             
+                <p><img src="img/insta.png" alt="r1" hspace="1" width="20" height="20 align="left" /><font color="black" , border: 2px solid transparent;>nkmankozan</font></p>            
             </div>
+            <center>
             <right><iframe src="https://www.google.com/maps/d/u/0/embed?mid=1qtUNYXpgw6fC_92wGk4TAuwh9MPNNYY&ehbc=2E312F" width="640" height="480"></iframe></right>
+            </center>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="container-fluid bg-4 text-center">
-        <p>Furkan KILIÇLI NK Güzellik Merkezi | Tüm Hakları Saklıdır © 2017 - 2022 </br><!--a href="https://nkkozan.github.io/nkguzellikmerkezi/">https://nkkozan.github.io/nkguzellikmerkezi/</a--></p>
+        <p> Web Master: Furkan KILIÇLI - NK Güzellik Merkezi | Tüm Hakları Saklıdır © 2017 - 2022 </br><!--a href="https://nkkozan.github.io/nkguzellikmerkezi/">https://nkkozan.github.io/nkguzellikmerkezi/</a--></p>
         <p></p>
         <body id="backgroundBody">
             <div id="textBody">
