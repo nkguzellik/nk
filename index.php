@@ -1,3 +1,23 @@
+<?php
+
+    if(isset($_POST['Gönder'])) {
+        $secret = "6LfLgjAhAAAAAL-ed2tYs2OrhwUz6asNRuK9Mvl5";
+        $response = $_POST['g-recaptcha-response'];
+        $remoteip = $_SERVER['REMOTE_ADDR'];
+        $URL = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip";
+        $data = file_get_contents($URL);
+        $row = json_decode($data, true);
+
+        if($row['success'] === TRUE){
+            echo "<script>alert('Randevunuz Başarıyla Alınmıştır');</script>";
+        } else {
+            echo "<script>alert('Ben Robot Değilimi İşaretlemediniz');</script>";
+        }
+    }
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="tr">
@@ -22,7 +42,7 @@
     <link " href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link " href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="main.css">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         body {
             font: 20px Montserrat, sans-serif;
@@ -87,21 +107,6 @@
         .navbar-nav li a:hover {
             color: #4C3173 !important;
         }
-        
-        button {
-        height: 50px;
-        background: orange;
-        border: none;
-        color: white;
-        font-size: 1.25em;
-        font-family: 'Nanum Gothic';
-        border-radius: 4px;
-        cursor: pointer;
-         }
-  
-        button:hover {
-            border: 2px solid black;
-        }
         .containet{
         width: 100%;
         height: 100vh;
@@ -152,9 +157,6 @@
             background: white;
             border: 1px solid black;
         }
-    
-  
-
         td{
             width: 500px;
             height: 50px;
@@ -198,15 +200,16 @@
         <img src="img/tugce.png" class="img-responsive img-circle margin" style="display:inline" alt="necla" width="350" height="350"-->
    <html>
   <body>
-    <center><form id="my-form" action="https://formspree.io/f/mnqranrg" method="POST" >
-        <h1 tyle="color: black; ">Randevu Alın</h1>
+    <center><form id="my-form" action="#" method="POST" class="container">
+        <h1 style="color: black;" >Randevu Alın</h1>
+        &nbsp; <!--BOŞLUK BIRKIR-->
         <!--h3>Randevu Alın</h3-->
         <small style="color: black; "> Adın Soyadın </small>
-        <input type="text" name="Adın Soyadın"  style="padding: 15px; border-radius: 30px;" align required>
+        <input class="text" name="Adın Soyadın"  style="padding: 15px; border-radius: 30px;" align required>
         <small style="color: black;"> Email </small>
-        <input type="email"  name="Email" style="padding: 15px; border-radius: 30px;" required>
+        <input class="email"  name="Email" style="padding: 15px; border-radius: 30px;" required>
         <small style="color: black;"> Telefon </small>
-        <input type="tel"  name="Telefon" style="padding: 15px; border-radius: 30px;" required>
+        <input class="tel"  name="Telefon" style="padding: 15px; border-radius: 30px;" required>
         <small style="color: black;"> Bir Hizmet Seçin </small>
         <select name="Bir Hizmet Seçin" style="padding: 15px; border-radius: 30px; color: black;" >
           <option>Bayanlar İçin Lazer Epilasyon</option>
@@ -220,14 +223,26 @@
           <option>Kuru manikür</option>
         </select>
         <small style="color: black;"> Tarih ve Saat </small>
-        <input type="datetime-local" id="tarihsaat" name="Tarih ve Saat" style="padding: 15px; border-radius: 30px;" required>
+        <input class="datetime-local" id="tarihsaat" name="Tarih ve Saat" style="padding: 15px; border-radius: 30px;" required>
         <small style="color: black;"> Detaylı Açıklama Yapı<nav></nav> </small>
         <textarea id="message" rows="4" name="Detaylı Açıklama Yapın" style="padding: 15px; border-radius: 30px;"></textarea>
-        <button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder</button> 
+        <!--button type="submit" class="btn" style="padding: 15px; border-radius: 30px;">Gönder </button-->
+        <br>
+        <div class="row">
+            <div class="g-recaptcha" data-sitekey="6LfLgjAhAAAAAILzlAb7tvA2RinR37lHrWXPIUTP"></div>
+        </div>
+        <button type="submit" class="btn wave-effect wave-light" style="padding: 15px; border-radius: 30px;">Gönder </button>
     </form>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script> 
+        const form = document.querySelector('container');
+        name = document.querySelector('container');
+    
+    </script>
         <p id="my-form-status"></p>    
       <!-- Place this script at the end of the body tag -->
-      <script>
+      <!--script>
           var form = document.getElementById("my-form");
           
           async function handleSubmit(event) {
@@ -258,7 +273,7 @@
             });
           }
           form.addEventListener("submit", handleSubmit)
-      </script> 
+      </script--> 
   </body>
   </html>
   </center>       
